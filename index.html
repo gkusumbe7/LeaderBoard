@@ -4,17 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+         /* CSS to style links */
+        /* Set color for unvisited links */
+        a {
+            color: blue;
+            text-decoration: none;
+            /* Removes default underline */
+        }
+
+        /* Set color for visited links */
+        a:visited {
+            color: purple;
+        }
+
+        /* Set color for links on hover */
+        a:hover {
+            color: red;
+        }
+
+        /* Set color for links when clicked */
+        a:active {
+            color: green;
+        }
+    </style>
 </head>
 <body>
     <div>
+
         <p>LeaderBoard</p>
-        <form action="#">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <button type="submit"></button>
-        </form>
+        <div>
+            <form action="#">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="text" placeholder="Country">
+                <input type="text" placeholder="Player Score">
+                <button type="submit">Add Player</button>
+            </form>
+        </div>
+        <div>
+            <div class="playerCard">
+                <p>AKHIL SHARMA</p>
+                <p>Country</p>
+                <p>Score</p>
+                <button>Delete</button>
+                <span>pPoint</span>
+                <span>nPoint</span>
+            </div>
+        </div>
+    
     </div>
+
+<script src="./playerData.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

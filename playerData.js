@@ -1,0 +1,20 @@
+const playerData = [
+    {
+        firstName:"AKHIL",
+        lastName:"SHARMA",
+        country:"INDIA",
+        playerScore:85
+    },
+    {
+        firstName:"LAXMI",
+        lastName:"SHARMA",
+        country:"INDIA",
+        playerScore:95
+    },
+    {
+        firstName:"RAHUL",
+        lastName:"SHARMA",
+        country:"INDIA",
+        playerScore:70
+    }
+];
