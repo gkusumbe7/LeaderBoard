@@ -4,9 +4,18 @@ let lName = document.querySelector(".lastName");
 let pCountry = document.querySelector(".countryName");
 let pScore = document.querySelector(".playerScore");
 let submitBtn = document.getElementById("submitBtn");
+
 // console.log(fName,lName,pCountry,pScore);
 
 // console.log(playerCard);
+
+
+
+
+
+
+
+
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -60,15 +69,19 @@ function updateData() {
                         clip-rule="evenodd" />
                 </svg>
             </button>
-            <button class="add w-24	border">+5</button>
-            <button class="sub w-24	border">-5</button>
+            <button   class="add w-24 border">+5</button>
+            <button  class="sub w-24 border">-5</button>
         </div>
             `
     });
 
     playerCard.innerHTML = innerHTML;
+    
 }
 
+
+let addBtn = document.querySelector("add");
+console.log(addBtn);
 
 document.onload = updateData();
 
