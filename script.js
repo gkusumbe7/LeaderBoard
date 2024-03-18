@@ -1,24 +1,57 @@
 let playerCard = document.getElementById("playerCard");
-let firstName = document.getElementsByClassName("firstName");
-let lastName = document.getElementsByClassName("lastName");
-let countryName = document.getElementsByClassName("countryName");
-let playerScore = document.getElementsByClassName("playerScore");
+let fName = document.querySelector(".firstName");
+let lName = document.querySelector(".lastName");
+let pCountry = document.querySelector(".countryName");
+let pScore = document.querySelector(".playerScore");
 let submitBtn = document.getElementById("submitBtn");
-// console.log(firstName,lastName,countryName,playerScore);
+// console.log(fName,lName,pCountry,pScore);
 
 // console.log(playerCard);
-function updateData(){
-    playerData.sort((p1,p2)=>{
+
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let pCountry = document.querySelector(".countryName");
+
+
+    if (fName.value == "" || lName.value == "" || pCountry.value == "" || pScore.value == "") {
+        console.log(fName.value);
+        alert("Add data on fileds");
+    } else {
+        let newPlayerAdded = {
+            firstName: fName.value,
+            lastName: lName.value,
+            country: pCountry.value,
+            playerScore: Number(pScore.value) 
+        };
+
+        console.log(newPlayerAdded);
+        playerData.push(newPlayerAdded);
+        updateData();
+
+        fName.value = "";
+        lName.value = "";
+        pCountry.value = "";
+        pScore.value = "";
+    }
+  
+});
+
+
+
+function updateData() {
+        playerData.sort((p1, p2) => {
         return p2.playerScore - p1.playerScore;
-    })   
+    })
     // console.log(playerData);
     let innerHTML = "";
 
-    playerData.forEach((item) =>{
+    playerData.forEach((item) => {
         innerHTML += `
+        <div class="m-5 flex  justify-center	border h-24 justify-center border-green-200	 bg-green-100 font-semibold">
         <p class="w-24 pt-8 border text-center">${item.firstName}</p>
             <p class="w-24	pt-8 border text-center">${item.lastName}</p>
-            <p class="w-24	pt-8 border text-center">${item.countryName}</p>
+            <p class="w-24	pt-8 border text-center">${item.country}</p>
             <p class="w-24	pt-8 border text-center">${item.playerScore}</p>
             <button class="w-24	border pl-9">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
@@ -29,9 +62,11 @@ function updateData(){
             </button>
             <button class="add w-24	border">+5</button>
             <button class="sub w-24	border">-5</button>
-        `
+        </div>
+            `
     });
 
+    playerCard.innerHTML = innerHTML;
 }
 
 
